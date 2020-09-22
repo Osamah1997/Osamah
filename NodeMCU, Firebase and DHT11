@@ -1,25 +1,37 @@
 ********************************************************************************************************************
+Created by Pi BOTS MakerHub
+
+   Email: pibotsmakerhub@gmail.com
+
+   Github: https://github.com/pibotsmakerhub
+
+   Copyright (c) 2020 Pi BOTS MakerHub
+*************************************************************************
+Edited by Eng: Osamah A.E Ahmed
+
+Email: osamahahmed1997@gmail.com
+*************************************************************************
+
 //FirebaseESP8266.h must be included before ESP8266WiFi.h
 #include "FirebaseESP8266.h"  // Install Firebase ESP8266 library
-#include <ESP8266WiFi.h>
+#include <ESP8266WiFi.h>     // Install NodeMCU library
 #include <DHT.h>    // Install DHT11 Library and Adafruit Unified Sensor Library
 
 
 #define FIREBASE_HOST "iot-ac-controller.firebaseio.com" //Without http:// or https:// schemes
-#define FIREBASE_AUTH "6DqWTDIiz3QvjM3duaIcLFVLwpp38LLe4Y9FPM7F"
-#define WIFI_SSID "MN4C1"
-#define WIFI_PASSWORD "kompmn4c1"
+#define FIREBASE_AUTH "6DqWTDIiz3QvjM3duaIcLFVLwpp38LLe4Y9FPM7F" // personal firebase account 
+#define WIFI_SSID "MN4C1"    // Wi-Fi name 
+#define WIFI_PASSWORD "kompmn4c1"   
 
-#define DHTPIN 2    // Connect Data pin of DHT to D2
-int AC = D5;     // Connect LED to D5
+#define DHTPIN 2    // Connect Data pin of DHT to D4
+//int AC = D5;     // Connect AC to D5
 
-#define DHTTYPE    DHT11
+#define DHTTYPE    DHT11   // Install DHT11 library
 DHT dht(DHTPIN, DHTTYPE);
 
-//Define FirebaseESP8266 data object
-FirebaseData firebaseData;
-//FirebaseData ACData;
-FirebaseData ACTVData;
+FirebaseData firebaseData;  //Define FirebaseESP8266 data object
+
+FirebaseData ACTVData;  //FirebaseData ACData;
 
 FirebaseJson json;
 
